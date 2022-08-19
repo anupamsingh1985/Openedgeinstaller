@@ -64,8 +64,11 @@ enable=false
 ;
 
 [Java]
-;JavaHome=/opt/java/openjdk
-JavaHome=/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64
+;JavaHome=/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64
+;JavaHome=/usr/lib/jvm/java-11-openjdk-amd64
+;JavaHome=/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.el7_9.x86_64
+
+JavaHome =<%= @javapath %>
 
 ;
 ; DESCRIPTION of Type and Destination
@@ -79,10 +82,10 @@ JavaHome=/usr/lib/jvm/java-11-openjdk-11.0.13.0.8-1.amzn2.0.3.x86_64
 
 [Type and Destination]
 type=COMPLETE
-path=/usr/dlc
-workpath=/usr/wrk
-oem_path=/usr/oemgmt
-oem_workpath=/usr/wrk_oemgmt
+path=<%= @path %>
+workpath=<%= @workpath %>
+oem_path=<%= @oem_path %>
+oem_workpath=<%= @oem_workpath %>
 
 ;
 ; DESCRIPTION of Server Engine
@@ -203,4 +206,5 @@ STSKeystorePath=
 NoHostVerify=0
 EnableAdminSrvSTSKeyPlugin=0
 PollingInterVal=
+
 
